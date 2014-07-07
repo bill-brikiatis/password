@@ -18,7 +18,8 @@
 </head>
 	<body>
 		<h1>Bill's Password Generator</h1>
-		<div><h2><?php echo $multiple_words; ?></h2></div>
+		<h2>Tell it how many words you want and <br>if you want numbers or symbols at the end.</h2>
+		<p class="password"><?php echo $multiple_words; ?></p>
 		<form name="user_config" action="index.php" method="post">
 			<label># of Words</label>
 			<select name="words">
@@ -32,10 +33,10 @@
 				<option value="8">8</option>
 				<option value="9">9</option>
 				<option value="10">10</option>
-			</select><br>
-			<input type="checkbox" name="numbers" value="on"></label>Add a number</label><br>
-			<input type="checkbox" name="symbols" value="on"><label>Add a symbol</label><br>
-			<input type="submit" name="Password" value="New Password">
+			</select><label class="back">(Max 10)</label><br>
+			<input type="checkbox" name="numbers" value="on"><label>Add a number to the end</label><br>
+			<input type="checkbox" name="symbols" value="on"><label>Add a symbol to the end</label><br>
+			<input class="button" type="submit" name="Password" value="New Password">
 		</form>	
 	</body>
 </html>
