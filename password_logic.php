@@ -1,6 +1,5 @@
 <?php
 
-
 // Creates array of words
 
 function wordList() {
@@ -35,8 +34,8 @@ function selectWord($number_words, $word_index) {
 	return $word;
 }
 
-function loopArray() {
-	$number_words = 5;
+function loopArray($number_words) {
+	$number_words;
 	$word_list = wordList();
 	if(!(is_array($word_list)) || $word_list == NULL) {
 		echo 'Something is wrong. Array of NOT available.';
@@ -46,32 +45,52 @@ function loopArray() {
 	foreach ($word_list as $word_index => $$word_value) {
 		if($word_index < $number_words) {
 			$word = selectWord($number_words, $word_index);
-			echo $word;
+			$multiple_words .= $word;
 		}
+		
 	}
+	return $multiple_words;
+	
 }
 
 
 
-// Start checkbox logic
+// Checkbox logic
+if( $_POST["words"]) {
+     $number_words = $_POST["words"];
+  }
+  
+else {
+	echo "The form is not completed.";
+}
 
-$word = loopArray();
-$check_number = 'off';
+if( $_POST["numbers"]) {
+     $check_number = $_POST["numbers"];
+  }
+  
+else {
+	$check_number = "off";
+}
+
+if( $_POST["symbols"]) {
+     $check_special = $_POST["symbols"];
+  }
+  
+else {
+	$check_special = "off";
+}
+
+$multiple_words = loopArray($number_words);
 $numbers = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 $numeral_index = count($numbers);
 $random_numeral = rand(0, ($numeral_index - 1));
 if($check_number == 'on'){
-	$word .= $numbers[$random_numeral];
+	$multiple_words .= $numbers[$random_numeral];
 }
 
-$check_special = 'on';
 $special = array('~', '@', '#', '%', '^', '&', '*', '+');
 $special_index = count($special);
 $random_special = rand(0, ($special_index - 1));
 if($check_special == 'on'){
-	$word .= $special[$random_special];
+	$multiple_words .= $special[$random_special];
 }
-
-echo $word;
-
-?>
