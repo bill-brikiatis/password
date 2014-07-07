@@ -17,7 +17,7 @@ $word_list = array(	'run',
 					'beach'
 	);
 	
-	return $word_ist;
+	return $word_list;
 }
 
 // Selects a word from array, generates random number
