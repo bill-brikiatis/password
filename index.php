@@ -18,7 +18,7 @@
 </head>
 	<body>
 		<h1>Bill's Password Generator</h1>
-		<h2>Tell it how many words you want and <br>if you want numbers or symbols at the end.</h2>
+		<h2>Tell it how many words you want,<br>if you want a number or symbol at the end, and hit submit.</h2>
 		<p class="password"><?php echo $multiple_words; ?></p>
 		<form name="user_config" action="index.php" method="post">
 			<label># of Words</label>
