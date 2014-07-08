@@ -36,6 +36,7 @@
 			</select><label class="back">(Max 10)</label><br>
 			<input type="checkbox" name="numbers" value="on"><label>Add a number to the end</label><br>
 			<input type="checkbox" name="symbols" value="on"><label>Add a symbol to the end</label><br>
+			<input type="checkbox" name="upper" value="on"><label>Make the first letter uppercase</label><br>
 			<input class="button" type="submit" name="Password" value="New Password">
 		</form>	
 	</body>

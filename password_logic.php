@@ -92,6 +92,14 @@ else {
 	$check_special = "off";
 }
 
+if( $_POST["upper"]) {
+     $check_upper = $_POST["upper"];
+  }
+  
+else {
+	$check_upper = "off";
+}
+
 $multiple_words = loopArray($number_words);
 $numbers = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 $numeral_index = count($numbers);
@@ -105,4 +113,8 @@ $special_index = count($special);
 $random_special = rand(0, ($special_index - 1));
 if($check_special == 'on'){
 	$multiple_words .= $special[$random_special];
+}
+
+if($check_upper == 'on'){
+	$multiple_words = ucwords($multiple_words);
 }
