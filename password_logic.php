@@ -7,7 +7,7 @@ error_reporting(0);
 
 function wordList() {
 
-$word_list = array(	'run', 
+/*$word_list = array(	'run', 
 					'walk',
 					'talk',
 					'help',
@@ -17,9 +17,17 @@ $word_list = array(	'run',
 					'house',
 					'condo',
 					'beach'
-	);
+	);*/
+	$filename = 'wordlist.txt';
+	$word_list = file ($filename);
+	if($word_list){
+		
+		return $word_list;
+	}
 	
-	return $word_list;
+	else {
+		echo "Something is wrong. The app could not connect to the word list.";
+	}
 }
 
 // Selects a word from array, generates random number for array index, takes in number of words and loop index
@@ -48,6 +56,7 @@ function loopArray($number_words) {
 	foreach ($word_list as $word_index => $$word_value) {
 		if($word_index < $number_words) {
 			$word = selectWord($number_words, $word_index);
+			$word = str_replace(array('.', ' ', "\n", "\t", "\r"), '', $word);
 			$multiple_words .= $word;
 		}
 		
